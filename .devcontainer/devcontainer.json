@@ -22,9 +22,9 @@
 	// new files getting created as root, but you may need to update the USER_UID
 	// and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
 	"runArgs": [
-					"-u", "vscode" ,
-				 	"-v", "${env:HOME}${env:USERPROFILE}/.ssh:/home/vscode/.ssh"
-			],
+		"-u", "vscode" ,
+		"-v", "${env:HOME}${env:USERPROFILE}/.ssh:/home/vscode/.ssh"
+	],
 
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
@@ -34,5 +34,12 @@
                      "MS-vsliveshare.vsliveshare-pack",
                      "EditorConfig.EditorConfig",
                      "wongjn.php-sniffer"
-	]
+	],
+
+
+	"features": {
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		}
+	}
 }
